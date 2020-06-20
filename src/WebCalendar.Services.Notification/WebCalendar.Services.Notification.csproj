@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\WebCalendar.DAL.Models\WebCalendar.DAL.Models.csproj" />
+      <ProjectReference Include="..\WebCalendar.DAL\WebCalendar.DAL.csproj" />
+      <ProjectReference Include="..\WebCalendar.EmailSender\WebCalendar.EmailSender.csproj" />
+      <ProjectReference Include="..\WebCalendar.PushNotification\WebCalendar.PushNotification.csproj" />
+    </ItemGroup>
+
+</Project>

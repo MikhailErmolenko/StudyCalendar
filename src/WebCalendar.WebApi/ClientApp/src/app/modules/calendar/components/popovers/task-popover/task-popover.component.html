@@ -1,0 +1,48 @@
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <div class="container" style="padding-right: 0">
+      <div class="text-right">
+        <button type="button" class="popover-btn">
+          <span><i class="far fa-edit fa-lg"></i></span>
+        </button>
+        <button type="button" class="popover-btn" (click)="deleteTask()">
+          <span><i class="far fa-trash-alt fa-lg"></i></span>
+        </button>
+        <button type="button" class="popover-btn" (click)="close()">
+          <span><i class="fas fa-times fa-lg"></i></span>
+        </button>
+      </div>
+      <br>
+      <div>
+        <h3 class="card-title" style="word-wrap: break-word;">{{(taskSubject | async)?.title}}</h3>
+      </div>
+      <br>
+      <div class="row">
+        <div aria-hidden="true"><i class="fas fa-stream fa-lg"></i></div>
+        <div class="col">{{(taskSubject | async)?.description}}</div>
+      </div>
+      <br>
+      <div class="row">
+        <div aria-hidden="true"><i class="far fa-clock fa-lg"></i></div>
+        <div class="col">{{(taskSubject | async)?.startTime | date: 'd MMMM,  H:mm'}}</div>
+      </div>
+      <br>
+      <div class="row">
+        <div aria-hidden="true"><i class="far fa-calendar-alt fa-lg"></i></div>
+        <div class="col">{{(taskSubject | async)?.calendar?.title}}</div>
+      </div>
+      <br>
+      <!--<div class="text-right">
+        <button *ngIf="!task.isDone" type="button" class="btn btn-outline-primary"
+                (click)="checkTaskDone()">TASK COMPLETED
+        </button>
+        <button *ngIf="task.isDone" type="button" class="btn btn-outline-primary"
+                (click)="uncheckTaskDone()">TASK IS NOT COMPLETED
+        </button>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,12 @@
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="dd-mm-yyyy"
+             name="dp" [(ngModel)]="date" (ngModelChange)="onModelChange()" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="fas fa-calendar-day"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

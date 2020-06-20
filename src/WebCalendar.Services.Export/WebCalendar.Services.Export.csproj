@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebCalendar.DAL\WebCalendar.DAL.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Ical.Net" Version="4.1.11" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

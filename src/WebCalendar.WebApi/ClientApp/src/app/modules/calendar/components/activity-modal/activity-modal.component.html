@@ -1,0 +1,53 @@
+<div class="modal-body">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Назва"
+           [(ngModel)]="taskContent.title">
+  </div>
+
+  <div>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="activity" class="nav-pills" orientation="horizontal">
+    <li ngbNavItem="task">
+    <ng-template ngbNavContent>
+      <div class="form-group">
+        <textarea class="form-control" placeholder="Коментар" rows="2"
+                  [(ngModel)]="taskContent.description"></textarea>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <app-datepicker-popup (dateEmitter)="setTaskDate($event)"></app-datepicker-popup>
+        </div>
+        <div class="col">
+          <app-timepicker class="float-right" (timeEmitter)="setTaskTime($event)"></app-timepicker>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <app-datepicker-popup (dateEmitter)="setTaskDate($event)"></app-datepicker-popup>
+        </div>
+        <div class="col">
+          <app-timepicker class="float-right" (timeEmitter)="setTaskTime($event)"></app-timepicker>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" required [(ngModel)]="taskContent.calendarId">
+          <option value="" disabled selected hidden>Обрати групу...</option>
+          <option [value]="calendar.id" *ngFor="let calendar of userCalendars">{{calendar.title}}</option>
+        </select>
+      </div>
+    </ng-template>
+    </li>
+  </ul>
+
+    <div [ngbNavOutlet]="nav"></div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Закрити</button>
+  <button type="button" class="btn btn-primary"
+          (click)="save()"
+  >Зберегти
+  </button>
+</div>

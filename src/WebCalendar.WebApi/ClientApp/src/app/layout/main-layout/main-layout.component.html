@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+  <a class="navbar-brand" routerLink="/calendar">Учбовий календар</a>
+  <div class="collapse navbar-collapse ml-auto flex-grow-0" id="navbarSupportedContent">
+    <ul class="navbar-nav text-right">
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown2" role="button">
+          {{authenticationService.currentUserValue.email}}
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
+          <a ngbDropdownItem routerLink="settings"><i class="fas fa-sliders-h"></i> Налаштування</a>
+          <a ngbDropdownItem (click)="logout()"><i class="fas fa-sign-out-alt"></i> Вийти</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,5 @@
+<button (click)="toggleSubscription()" class="btn btn-primary"
+        [disabled]="(pushNotificationService.pushNotificationStatusSubject | async).inProgress">
+  <span *ngIf="(pushNotificationService.pushNotificationStatusSubject | async).isSubscribe">Відключити</span>
+  <span *ngIf="!(pushNotificationService.pushNotificationStatusSubject | async).isSubscribe">Включити</span>
+</button>
