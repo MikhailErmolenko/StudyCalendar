@@ -24,14 +24,15 @@ namespace WebCalendar.DAL.EF.Initializer
         
         public void Seed()
         {
-            _context.Database.EnsureDeleted();
+            if (_context.Database.EnsureDeleted())
+	    {
                 _context.Database.EnsureCreated();
                 AddUser();
                 AddCalendar();
                 AddCalendarUser();
                 AddEvent();
                 AddUserEvent();
-           
+           }
         }
 
         private void AddUser()
