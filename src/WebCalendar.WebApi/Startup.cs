@@ -14,6 +14,8 @@ using WebCalendar.DependencyResolver;
 using WebCalendar.WebApi.Filters;
 using WebCalendar.WebApi.Middleware;
 using WebCalendar.Services.Scheduler.Contracts;
+using WebCalendar.DAL.EF.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebCalendar.WebApi
 {
@@ -69,6 +71,9 @@ namespace WebCalendar.WebApi
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
+
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
             services.RegisterDependencies(Configuration);
 

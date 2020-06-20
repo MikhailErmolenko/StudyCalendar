@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -37,11 +38,11 @@ namespace WebCalendar.DependencyResolver
         {
             string connection = configuration["ConnectionString"];
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connection,
-                    builder => { builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null); }));
+			services.AddDbContext<ApplicationDbContext>(options =>
+				options.UseSqlServer(connection,
+			builder => { builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null); }));
 
-            services.AddDefaultIdentity<User>(options =>
+			services.AddDefaultIdentity<User>(options =>
                 {
                     options.Password.RequireDigit = false;
                     options.Password.RequiredLength = 6;
