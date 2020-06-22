@@ -87,7 +87,7 @@ namespace WebCalendar.WebApi
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer, 
             ISchedulerDataLoader schedulerDataLoader)
         {
-            if (env.IsDevelopment())
+            if (/*env.IsDevelopment()*/true)
             {
                 app.UseDeveloperExceptionPage();
             }
