@@ -72,10 +72,10 @@ namespace WebCalendar.WebApi
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
 
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+			//services.AddDbContext<ApplicationDbContext>(options =>
+			//	options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
-            services.RegisterDependencies(Configuration);
+			services.RegisterDependencies(Configuration);
 
             services.AddSwaggerGen(c =>
             {

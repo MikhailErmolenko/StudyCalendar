@@ -24,7 +24,7 @@ namespace WebCalendar.DAL.EF.Initializer
         
         public void Seed()
         {
-            _context.Database.EnsureDeleted();
+                _context.Database.EnsureDeleted();
                 _context.Database.EnsureCreated();
                 AddUser();
                 AddCalendar();
